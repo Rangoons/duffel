@@ -3,12 +3,12 @@ import 'firebase/auth';
 import 'firebase/database';
 import { config } from '../../constants/config';
 
-const actionCodeSettings = {
-  //URL to direct back to - must be whitelisted
-  url: 'https://localhost',
-  //must be true
-  handleCodeInApp: true,
-};
+// const actionCodeSettings = {
+//   //URL to direct back to - must be whitelisted
+//   url: 'https://localhost',
+//   //must be true
+//   handleCodeInApp: true,
+// };
 
 class Firebase {
   constructor() {

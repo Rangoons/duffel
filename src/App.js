@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navigation, { PrivateRoute } from './components/Navigation';
+import Navigation from './components/Navigation';
 import { withAuthentication } from './components/Session';
 // import LandingPage from './components/Landing';
 import SignUpPage from './components/SignUp';
