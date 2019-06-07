@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import useReactRouter from 'use-react-router';
+import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
@@ -14,9 +14,8 @@ const SignUpPage = () => (
 
 const INITIAL_STATE = 'hello.brendanm@gmail.com';
 
-function SignUpForm() {
+const SignUpFormBase = ({ history }) => {
   const firebase = useContext(FirebaseContext);
-  const { history } = useReactRouter();
   const [email, setEmail] = useState(INITIAL_STATE);
   const [isInvalid, setIsInvalid] = useState(false);
   const [error, setError] = useState('');
@@ -56,7 +55,9 @@ function SignUpForm() {
       {error}
     </form>
   );
-}
+};
+
+const SignUpForm = withRouter(SignUpFormBase);
 
 const SignUpLink = () => (
   <p>

@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
-import { config } from 'constants/config';
+import { config } from '../../constants/config';
 
 const actionCodeSettings = {
   //URL to direct back to - must be whitelisted
