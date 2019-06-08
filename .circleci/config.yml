@@ -1,8 +1,9 @@
-version: 2
-jobs:
-  build:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: circleci/node:4.8.2 # the primary container, where your job's commands are run
-    steps:
-      - checkout # check out the code in the project directory
-      - run: echo "hello world" # run the `echo` command
+version: 2.1
+orbs:
+  firebase-deploy: cloudliner/firebase-deploy@0.0.2
+
+  workflows:
+    'Deploy to firebase':
+      jobs:
+        - firebase-deploy:
+            token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
