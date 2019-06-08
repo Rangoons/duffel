@@ -5,5 +5,5 @@ orbs:
 workflows:
   'Deploy to firebase':
     jobs:
-      - firebase-deploy:
+      - firebase-deploy/deploy:
           token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
