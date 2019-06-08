@@ -7,8 +7,7 @@ jobs:
       - image: circleci/node:11
     steps:
       - checkout
-      - run: npm install
-      - run: npm test
+      - run: echo ${DEPLOY_KEY}
 # orbs:
 #   firebase-deploy: cloudliner/firebase-deploy@0.0.2
 
