@@ -26,7 +26,7 @@ const SignUpFormBase = ({ history }) => {
   const onSubmit = event => {
     event.preventDefault();
     firebase
-      .doSendSignInLink(email)jdlssd;l
+      .doSendSignInLink(email)
       .then(authUser => {
         //create a user in the db
         return firebase.user(authUser.user.uid).set({

@@ -5,7 +5,7 @@ import { config } from '../../constants/config';
 
 const actionCodeSettings = {
   //URL to direct back to - must be whitelisted
-  url: 'https://localhost',
+  url: 'https://duffel-e3dab.firebaseapp.com/',
   //must be true
   handleCodeInApp: true,
 };
