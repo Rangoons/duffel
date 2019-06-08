@@ -29,7 +29,7 @@ class Firebase {
     this.auth
       .sendSignInLinkToEmail(email, actionCodeSettings)
       .then(() => window.localStorage.setItem('emailForSignIn', email))
-      .catch(err => console.log(err));
+      .catch(err => console.log('firebase api', err));
 
   doSignOut = () => this.auth.signOut();
 

@@ -27,17 +27,19 @@ const SignUpFormBase = ({ history }) => {
     event.preventDefault();
     firebase
       .doSendSignInLink(email)
-      .then(authUser => {
-        //create a user in the db
-        return firebase.user(authUser.user.uid).set({
-          email,
-        });
-      })
+      // .then(authUser => {
+      //   //create a user in the db
+      //   console.log(authUser);
+      //   return firebase.user(authUser.user.uid).set({
+      //     email,
+      //   });
+      // })
       .then(() => {
         setEmail(INITIAL_STATE);
         history.push(ROUTES.HOME);
       })
       .catch(err => {
+        console.log('sign up', err);
         setError(err.message);
       });
   };
