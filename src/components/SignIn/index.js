@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import useReactRouter from 'use-react-router';
 
 import { SignUpLink } from '../SignUp';
-import RedirectIfAuth from './RedirectIfAuth'
+import RedirectIfAuth from './RedirectIfAuth';
 import { FirebaseContext } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
@@ -14,14 +14,16 @@ const SignInPage = () => (
   </div>
 );
 
-const INITIAL_STATE = 'hello.brendanm@gmail.com'
+const INITIAL_STATE = '';
 
 function SignInForm() {
-  const firebase = useContext(FirebaseContext)
+  const firebase = useContext(FirebaseContext);
   const { history } = useReactRouter();
-  const [email, setEmail] = useState(INITIAL_STATE)
-  const [isInvalid, setIsInvalid] = useState(false)
-  useEffect(() => { setIsInvalid(email === '') })
+  const [email, setEmail] = useState(INITIAL_STATE);
+  const [isInvalid, setIsInvalid] = useState(false);
+  useEffect(() => {
+    setIsInvalid(email === '');
+  });
 
   const onSubmit = event => {
     event.preventDefault();
@@ -32,8 +34,8 @@ function SignInForm() {
   };
 
   const onChange = event => {
-    setEmail(event.target.value)
-  }
+    setEmail(event.target.value);
+  };
 
   return (
     <form onSubmit={onSubmit}>
@@ -46,9 +48,9 @@ function SignInForm() {
       />
       <button disabled={isInvalid} type="submit">
         Sign In
-        </button>
+      </button>
     </form>
-  )
+  );
 }
 
 export default SignInPage;

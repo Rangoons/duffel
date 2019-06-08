@@ -3,12 +3,12 @@ import 'firebase/auth';
 import 'firebase/database';
 import { config } from '../../constants/config';
 
-// const actionCodeSettings = {
-//   //URL to direct back to - must be whitelisted
-//   url: 'https://localhost',
-//   //must be true
-//   handleCodeInApp: true,
-// };
+const actionCodeSettings = {
+  //URL to direct back to - must be whitelisted
+  url: 'https://localhost',
+  //must be true
+  handleCodeInApp: true,
+};
 
 class Firebase {
   constructor() {
@@ -25,11 +25,11 @@ class Firebase {
   doSignInWithEmailAndPassword = (email, password = 'password') =>
     this.auth.signInWithEmailAndPassword(email, password);
 
-  // doSendSignInLink = email =>
-  //   this.auth
-  //     .sendSignInLinkToEmail(email, actionCodeSettings)
-  //     .then(() => window.localStorage.setItem('emailForSignIn', email))
-  //     .catch(err => console.log(err));
+  doSendSignInLink = email =>
+    this.auth
+      .sendSignInLinkToEmail(email, actionCodeSettings)
+      .then(() => window.localStorage.setItem('emailForSignIn', email))
+      .catch(err => console.log(err));
 
   doSignOut = () => this.auth.signOut();
 

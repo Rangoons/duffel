@@ -12,7 +12,7 @@ const SignUpPage = () => (
   </div>
 );
 
-const INITIAL_STATE = 'hello.brendanm@gmail.com';
+const INITIAL_STATE = '';
 
 const SignUpFormBase = ({ history }) => {
   const firebase = useContext(FirebaseContext);
@@ -26,7 +26,7 @@ const SignUpFormBase = ({ history }) => {
   const onSubmit = event => {
     event.preventDefault();
     firebase
-      .doCreateUserWithEmailAndPassword(email)
+      .doSendSignInLink(email)jdlssd;l
       .then(authUser => {
         //create a user in the db
         return firebase.user(authUser.user.uid).set({
