@@ -1,18 +1,9 @@
-# version: 2.1
-# orbs:
-#   firebase-deploy: cloudliner/firebase-deploy@0.0.2
-
-#   workflows:
-#     'Deploy to firebase':
-#       jobs:
-#         - firebase-deploy:
-#             token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
 version: 2.1
-
 orbs:
-  hello: circleci/hello-build@0.0.7 # uses the circleci/buildpack-deps Docker image
+  firebase-deploy: cloudliner/firebase-deploy@0.0.2
 
 workflows:
-  'Hello Workflow':
+  'Deploy to firebase':
     jobs:
-      - hello/hello-build
+      - firebase-deploy:
+          token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
