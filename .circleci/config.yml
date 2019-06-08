@@ -1,11 +1,21 @@
 version: 2.1
-orbs:
-  firebase-deploy: cloudliner/firebase-deploy@0.0.2
 
-workflows:
-  'Deploy to firebase':
-    jobs:
-      - deploy2fb:
-        steps:
-          -firebase-deploy/deploy:
-          token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
+jobs:
+  build:
+    working_directory: ~/tmp
+    docker:
+      - image: circle/node:11
+    steps:
+      - checkout
+      - run: npm install
+      - run: npm test
+# orbs:
+#   firebase-deploy: cloudliner/firebase-deploy@0.0.2
+
+# workflows:
+#   'Deploy to firebase':
+#     jobs:
+#       - deploy2fb:
+#         steps:
+#           -firebase-deploy/deploy:
+#           token: '1/UhZkVM3gDMNTsuBEOO8E78CIFDpllkBWR_qWyGm54EMFdjKxwN_BU3ZTgWdAuKM7'
