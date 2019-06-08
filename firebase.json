@@ -6,6 +6,10 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
+  "functions": {
+    "predeploy": ["npm --prefix \"$RESOURCE_DIR\" "],
+    "source": "functions"
+  },
   "hosting": {
     "public": "build",
     "ignore": ["firebase.json"]
