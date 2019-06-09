@@ -19,7 +19,7 @@ class Firebase {
   }
 
   // *** Auth API ***
-  doCreateUserWithEmailAndPassword = (email, password = 'password') =>
+  doCreateUserWithEmailAndPassword = (email, password) =>
     this.auth.createUserWithEmailAndPassword(email, password);
 
   doSignInWithEmailAndPassword = (email, password = 'password') =>
@@ -32,6 +32,8 @@ class Firebase {
       .catch(err => console.log('firebase api', err));
 
   doSignOut = () => this.auth.signOut();
+
+  checkCurrentUser = () => this.auth.currentUser;
 
   // *** User API ***
 
