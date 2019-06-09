@@ -1,9 +1,6 @@
 import React from 'react';
-import { H1, Blockquote } from '@blueprintjs/core';
+import { H1 } from '@blueprintjs/core';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { FirebaseContext } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
 import { GradientContainer } from '../shared/styled-components';
 
 const LandingPage = () => (
